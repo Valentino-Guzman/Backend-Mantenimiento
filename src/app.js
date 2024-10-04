@@ -6,12 +6,11 @@ import user from "../src/routes/user.routes.js"
 import {isAdmin} from "./middlewares/auth.middleware.js"
 import { verifyTokenCookie } from './middlewares/cookies.middleware.js'
 
-
 const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use(cookieParser())
+app.use(cookieParser()) 
 app.disable('x-powered-by')
 app.use(auth)
 app.use(user) 
